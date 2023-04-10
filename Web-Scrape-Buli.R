@@ -30,11 +30,11 @@ team_heim <- name[1]
 team_ausw <- name[2]
 goals_heim <- as.integer(werte[1])
 goals_ausw <- as.integer(werte[4])
-xgoals_heim <- werte[2]
+xgoals_heim <- as.double(werte[2])
 xgoals_ausw <- as.double(werte[3])
-shots_off_target <- as.integer(werte[5])
-shots_on_target <- as.integer(werte[7])
-shots <- shots_off_target+shots_on_target
-
-typeof(shots_off_target)
-typeof(goals_ausw)
+shots_off_target_heim <- as.integer(werte[5])
+shots_on_target_heim <- as.integer(werte[7])
+shots_heim <- shots_off_target+shots_on_target
+shots_off_target_ausw <- as.integer(werte[9])
+shots_on_target_ausw <- as.integer(werte[11])
+shots_ausw <- shots_off_target_ausw + shots_on_target_ausw
