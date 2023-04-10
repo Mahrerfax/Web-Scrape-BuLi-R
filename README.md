@@ -10,8 +10,8 @@ Mit diesem Skript kann man sich die Spielstatistiken in R Scrapen und anschließ
 
 # Wie benutze ich das Skript?
 
-Kopiere den Link vom Spielbericht der **englischen** Bundeliga-webseite und füge den bei *link* zwische den " " ein.
-Die Daten werden dann anschließend als Dataframe ausgegeben.
+Kopiere den Link vom Spielbericht der **englischen** Bundeliga-webseite und füge den bei *link* zwische den " " ein.<br>
+Die Daten werden dann anschließend als Dataframe ausgegeben.<br>
 Es wird die englisch-sprachige Seite benutzt, da auf der deutsch-sprachigen Seite xGoals mit dem Seperator "," beschrieben wird und dadurch Fehler entstehen können.
 
 
