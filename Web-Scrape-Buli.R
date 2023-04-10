@@ -1,9 +1,17 @@
+# Installierung der Packages
+
+# install.packages("rvest")
+# install.packages("dplyr")
+
+
 # Laden der benötigten Packages
 
 library(rvest)
 library(dplyr)
 
 # Einlesen der Website
+
+# Den Link zwischen die " " einsetzen!
 
 link <- " "
 website <- read_html(link)
