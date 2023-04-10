@@ -5,7 +5,7 @@ library(dplyr)
 
 # Einlesen der Website
 
-link <- "https://www.bundesliga.com/en/2bundesliga/matchday/2022-2023/27/1-fc-heidenheim-1846-vs-fc-st-pauli/stats"
+link <- " "
 website <- read_html(link)
 
 # Scrapen der Statistiken vom eingelesenen Link
@@ -98,6 +98,6 @@ spielstats <- data.frame( Team = c(team_heim,
                           Fouls = c(fouls_heim,
                                     fouls_ausw))
 
-spielstats
+View(spielstats)
 
 
