@@ -2,11 +2,10 @@
 
 library(rvest)
 library(dplyr)
-library(esquisse)
 
 # Einlesen der Website
 
-link <- "https://www.bundesliga.com/en/2bundesliga/matchday/2022-2023/26/fortuna-duesseldorf-vs-hamburger-sv/stats"
+link <- "https://www.bundesliga.com/en/2bundesliga/matchday/2022-2023/27/1-fc-heidenheim-1846-vs-fc-st-pauli/stats"
 website <- read_html(link)
 
 # Scrapen der Statistiken vom eingelesenen Link
@@ -27,8 +26,10 @@ werte_name
  
 # Holt die restlichen statistiken die von .value nicht erfasst worden sind
 
-werte_rest <- website %>% html_nodes("span") %>% html_text()
+werte_rest <- website %>% html_nodes(".text-chart span") %>% html_text()
 werte_rest
+
+#Zurzeit fehlt noch der Ballbesitz
 
 # Zuweisung der einzelnen Variablen
 
@@ -59,11 +60,11 @@ abseits_heim <- as.integer(werte[23])
 abseits_ausw <- as.integer(werte[24])
 fouls_heim <- as.integer(werte[25])
 fouls_ausw <- as.integer(werte[26])
-ballbesitz_heim <- as.integer(werte_rest[38])
-ballbesitz_ausw <- as.integer(werte_rest[39])
+#ballbesitz_heim <- as.integer(werte_rest[38])
+#ballbesitz_ausw <- as.integer(werte_rest[39])
 werte_rest <- gsub("%", "", werte_rest)         #entfernen des "%" aus dem Wert um es anschließend in Integer umzuwandeln
-passquote_heim <- as.integer(werte_rest[43])
-passquote_ausw <- as.integer(werte_rest[45])
+passquote_heim <- as.integer(werte_rest[1])
+passquote_ausw <- as.integer(werte_rest[3])
 
 
 # Dataframe erstellen
@@ -76,8 +77,8 @@ spielstats <- data.frame( Team = c(team_heim,
                                  xgoals_ausw),
                           Torschuesse = c(shots_heim,
                                           shots_ausw),
-                          Ballbeseitz = c(ballbesitz_heim,
-                                          ballbesitz_ausw),
+                          #Ballbeseitz = c(ballbesitz_heim,
+                          #                ballbesitz_ausw),
                           Pässe = c(paesse_heim,
                                     paesse_ausw),
                           Passquote = c(passquote_heim,
@@ -97,5 +98,6 @@ spielstats <- data.frame( Team = c(team_heim,
                           Fouls = c(fouls_heim,
                                     fouls_ausw))
 
+spielstats
 
 
