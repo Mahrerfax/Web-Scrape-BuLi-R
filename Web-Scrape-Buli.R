@@ -113,4 +113,7 @@ spielstats <- data.frame( Team = c(team_heim,
 
 View(spielstats)
 
+# write.csv(DataFrame Name, "Path to export the DataFrame\\File Name.csv", row.names=FALSE)
+# write.xlsx(x, file, sheetName = "Sheet1", 
+#  col.names = TRUE, row.names = TRUE, append = FALSE)
 
